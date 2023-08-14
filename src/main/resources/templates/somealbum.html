@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Someone's album</title>
+        <link href="../static/css/style_album.css" th:href="@{/css/style_album.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <a th:href="@{/user/visit(username=${album1.formapping})}">Return to menu</a> <br/> <br/>
+        <p> Inside of <span th:if="${album1}" th:text="${album1.title}"></span></p>
+        <div>
+            <ul id="list">
+                <li th:each="photo : ${photos}">
+                    <a style="color:red;font-size:20px;" th:href="@{/user/visit/album/photo(id=${photo.id})}" th:text="${photo.name}"/><br/>
+                    <img style="width: 100px; height: 100px;" th:src="@{/img/} + ${photo.src} + @{/} + ${photo.name}" src ="#" alt="File is not found"/> 
+                </li>
+            </ul>
+	</div>
+     </body>
+</html>

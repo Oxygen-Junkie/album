@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Results</title>
+        <style>
+            body {
+                background-color: #2E8B57; 
+                color: #FFD700; 
+                text-shadow: 0 1px 1px #2D2020;
+            }
+        </style>
+    </head>
+    <body>
+        <a th:href="@{/user}">Return to menu</a> 
+        <div>
+            <br/>
+            <span>Results by email</span>
+            <ol>
+                <li th:each="photo1 : ${photos1}">
+                    <a style="color:red;font-size:20px;" th:href="@{/user/visit/album/photo(id=${photo1.id})}" th:text="${photo1.name}"/>
+                </li>
+            </ol>
+	</div>
+        <div>
+            <span>Results by photo name</span>
+            <ol>
+                <li th:each="photo2 : ${photos2}">
+                    <a style="color:red;font-size:20px;" th:href="@{/user/visit/album/photo(id=${photo2.id})}" th:text="${photo2.name}"/>
+                </li>
+            </ol>
+	</div>
+        <div>
+            <span>Results by tag</span>
+            <ol>
+                <li th:each="photo3 : ${photos3}">
+                    <a style="color:red;font-size:20px;" th:href="@{/user/visit/album/photo(id=${photo3.id})}" th:text="${photo3.name}"/>
+                </li>
+            </ol>
+	</div>
+    </body>
+</html>
