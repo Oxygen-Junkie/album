@@ -12,7 +12,7 @@ import Oxygen.domain.User;
 
 /**
  * 
- * @author tatja
+ * @author Oxygen-Junkie
  */
 public interface AlbumRepo extends CrudRepository<Album, Long>{
     List<Album> findByOwner(User user);

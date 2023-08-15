@@ -7,7 +7,7 @@ import Oxygen.domain.Photo;
 
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 public interface CommentRepo extends CrudRepository<Comment, Long>{
     List<Comment> findByPicture(Photo picture);

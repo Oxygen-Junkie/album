@@ -11,7 +11,7 @@ import Oxygen.domain.Like;
 import Oxygen.domain.Photo;
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 public interface LikeRepo extends CrudRepository<Like, Long>{
     List <Like> findByImage(Photo image);

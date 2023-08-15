@@ -10,7 +10,7 @@ import Oxygen.domain.User;
 
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 public interface UserRepo extends JpaRepository<User, Long> {
     User findByUsername(String username);

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 @Service
 public class MailSender {

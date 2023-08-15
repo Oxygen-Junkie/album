@@ -13,7 +13,7 @@ import Oxygen.domain.Photo;
 
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 public interface PhotoRepo extends CrudRepository<Photo, Long>{
     List<Photo> findByBook(Album album);

@@ -11,7 +11,7 @@ import Oxygen.domain.Friend;
 import Oxygen.domain.User;
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 public interface FriendRepo extends CrudRepository<Friend, Long>{
     List <Friend> findByPerson(User user);

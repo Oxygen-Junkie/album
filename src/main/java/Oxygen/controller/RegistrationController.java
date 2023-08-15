@@ -18,7 +18,7 @@ import Oxygen.repos.UserRepo;
 
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 @Controller
 public class RegistrationController {

@@ -20,7 +20,7 @@ import Oxygen.service.MailSender;
 
 /**
  *
- * @author tatja
+ * @author Oxygen-Junkie
  */
 @Controller
 @RequestMapping("/user/admin")
