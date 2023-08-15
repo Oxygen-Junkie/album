@@ -2,7 +2,7 @@ package Oxygen.controller;
 
 import java.io.File;
 import java.util.Map;
-import javax.transaction.Transactional;
+import jakarta.transaction.TransactionScoped;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -44,7 +44,7 @@ public class AdminController {
     private String uploadPath;
     
     @GetMapping("/album/deletePhoto")
-    @Transactional
+    @TransactionScoped
     public String deletePhoto(@AuthenticationPrincipal User user, @RequestParam Integer id, Map<String, Object> model) {
         if (photoRepo.findById(id) != null) {
             Photo photo = photoRepo.findById(id);
@@ -57,7 +57,7 @@ public class AdminController {
             temp.delete();
             photoRepo.deleteById(id);
             String message = String.format("Hello " + photo.getBook().getOwner().getUsername() + "! \n" + 
-                        "Your photo was considered inapropriate and deleted by " + user.getUsername() + "\n" +
+                        "Your photo was considered inappropriate and deleted by " + user.getUsername() + "\n" +
                         "Please respect this site and we will respect content you upload \n" +
                         "Sincerely, photoAlbum administration");
             mailSender.send(photo.getBook().getOwner().getUsername(), "Your photo was removed", message);

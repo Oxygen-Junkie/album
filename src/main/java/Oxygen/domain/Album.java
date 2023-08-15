@@ -1,14 +1,14 @@
 
 package Oxygen.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 /**
  *
@@ -23,7 +23,7 @@ public class Album {
     
     private String title;
     private String status;
-    private String formapping;
+    private String forMapping;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
@@ -37,7 +37,7 @@ public class Album {
         this.owner = user;
         this.title = title;
         this.status = status;
-        this.formapping = user.getUsername();
+        this.forMapping = user.getUsername();
     }
 
     public Integer getId() {
@@ -73,10 +73,10 @@ public class Album {
     }
 
     public String getFormapping() {
-        return formapping;
+        return forMapping;
     }
 
-    public void setFormapping(String formapping) {
-        this.formapping = formapping;
+    public void setFormapping(String forMapping) {
+        this.forMapping = forMapping;
     }
 }

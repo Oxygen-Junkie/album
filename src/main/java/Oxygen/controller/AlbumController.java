@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.transaction.Transactional;
+import jakarta.transaction.TransactionScoped;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -100,7 +100,7 @@ public class AlbumController {
     }
     
     @GetMapping("/deletePhoto")
-    @Transactional
+    @TransactionScoped
     public String deletePhoto(@RequestParam Integer id, Map<String, Object> model) {
         if (photoRepo.findById(id) != null) {
             Photo photo = photoRepo.findById(id);

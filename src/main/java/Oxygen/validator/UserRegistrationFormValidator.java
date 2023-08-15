@@ -1,4 +1,3 @@
-
 package Oxygen.validator;
 
 import org.springframework.stereotype.Component;
