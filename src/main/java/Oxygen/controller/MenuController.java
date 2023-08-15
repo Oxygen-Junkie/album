@@ -57,7 +57,7 @@ public class MenuController {
     @GetMapping
     public String action(@AuthenticationPrincipal User user, Map<String, Object> model) {
         Iterable<User> users = userRepo.findAll();
-        List list = new ArrayList();
+        List<User> list = new ArrayList<User>();
         for (User temp : users) {                                 // users.remove по какойто причине не работает
             if (!temp.getUsername().equals(user.getUsername()) ) {
                 list.add(temp);
@@ -148,7 +148,7 @@ public class MenuController {
         } else {
             return "errorMenu";
         }
-        return "searchresponce";
+        return "searchResponce";
     }
     
     public Boolean ifFriend(User user1, User user2) {

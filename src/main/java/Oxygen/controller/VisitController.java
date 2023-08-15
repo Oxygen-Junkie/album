@@ -62,7 +62,7 @@ public class VisitController {
     @GetMapping
     public String visit(@AuthenticationPrincipal User user, @RequestParam String username, Map<String, Object> model) {
         List<User> users = userRepo.findAll();
-        List list = new ArrayList();
+        List<User> list = new ArrayList<User>();
         Boolean check = false;
         for (User temp : users) {                                 // users.remove по какойто причине не работает
             if (!temp.getUsername().equals(user.getUsername())) {
@@ -73,7 +73,7 @@ public class VisitController {
         if (user.isPrivilege()) {
             model.put("albums", albums);
         } else {
-            List list1 = new ArrayList();
+            List<Album> list1 = new ArrayList<Album>();
             Iterable<Friend> friends = friendRepo.findByPerson(userRepo.findByUsername(username));
             for(Friend friend : friends) {
                 if (friend.getPartner().getUsername().equals(user.getUsername())) {
@@ -91,7 +91,7 @@ public class VisitController {
         model.put("userHim", username);
         model.put("users", list);
         model.put("friends", friendRepo.findByPerson(user));
-        return "somemenu";
+        return "someMenu";
     }
     
     @PostMapping
@@ -119,9 +119,9 @@ public class VisitController {
         model.put("album1", album);
         model.put("photos", photos);
         if (user.isPrivilege()) {
-            return "inspectedalbum";
+            return "inspectedAlbum";
         } else {
-            return "somealbum";
+            return "someAlbum";
         }
     }
     
@@ -135,7 +135,7 @@ public class VisitController {
             model.put("comments", comments);
             model.put("photo", photo);
             model.put("count", likeRepo.findByImage(photo).size());        
-            return "somephoto";
+            return "somePhoto";
         }
     }
     
